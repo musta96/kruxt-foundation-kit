@@ -1,96 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ─────────────────────────────────────────────
+   KRUXT Design System — Guild Premium / Minimal
+   All colors MUST be HSL
+───────────────────────────────────────────── */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* ── Surface ── */
+    --background:        224 28% 6%;
+    --foreground:        220 20% 94%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card:              224 22% 9%;
+    --card-foreground:   220 20% 94%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover:           224 24% 8%;
+    --popover-foreground:220 20% 94%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* ── Brand ── */
+    --primary:           38 96% 54%;        /* amber gold */
+    --primary-foreground:224 28% 6%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary:         224 18% 14%;
+    --secondary-foreground:220 15% 72%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* ── Muted / Accent ── */
+    --muted:             224 18% 12%;
+    --muted-foreground:  220 12% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent:            200 90% 48%;       /* electric cyan */
+    --accent-foreground: 224 28% 6%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* ── Semantic ── */
+    --destructive:       0 72% 55%;
+    --destructive-foreground:0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --success:           142 70% 45%;
+    --success-foreground:224 28% 6%;
 
-    --radius: 0.5rem;
+    --warning:           38 96% 54%;
+    --warning-foreground:224 28% 6%;
 
-    --sidebar-background: 0 0% 98%;
+    /* ── Chrome ── */
+    --border:            224 18% 14%;
+    --input:             224 22% 12%;
+    --ring:              38 96% 54%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --radius: 0.625rem;
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* ── KRUXT Tokens ── */
+    --kruxt-gold:         38 96% 54%;
+    --kruxt-gold-dim:     38 80% 42%;
+    --kruxt-cyan:         200 90% 48%;
+    --kruxt-void:         224 28% 4%;
+    --kruxt-surface:      224 22% 9%;
+    --kruxt-surface-2:    224 20% 13%;
+    --kruxt-border:       224 18% 16%;
+    --kruxt-text-dim:     220 12% 50%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    /* ── Gradients ── */
+    --gradient-brand:   linear-gradient(135deg, hsl(38 96% 54% / 0.15) 0%, hsl(200 90% 48% / 0.08) 100%);
+    --gradient-gold:    linear-gradient(135deg, hsl(38 96% 54%) 0%, hsl(32 90% 46%) 100%);
+    --gradient-void:    linear-gradient(180deg, hsl(224 28% 6%) 0%, hsl(224 28% 4%) 100%);
+    --gradient-card:    linear-gradient(145deg, hsl(224 22% 10%) 0%, hsl(224 22% 8%) 100%);
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    /* ── Shadows ── */
+    --shadow-sm:        0 1px 3px 0 hsl(224 28% 3% / 0.8);
+    --shadow-md:        0 4px 16px 0 hsl(224 28% 3% / 0.7);
+    --shadow-gold:      0 0 24px hsl(38 96% 54% / 0.25);
+    --shadow-card:      0 2px 8px hsl(224 28% 3% / 0.6);
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* ── Sidebar ── */
+    --sidebar-background: 224 24% 7%;
+    --sidebar-foreground: 220 20% 90%;
+    --sidebar-primary:    38 96% 54%;
+    --sidebar-primary-foreground: 224 28% 6%;
+    --sidebar-accent:     224 20% 13%;
+    --sidebar-accent-foreground: 220 20% 90%;
+    --sidebar-border:     224 18% 13%;
+    --sidebar-ring:       38 96% 54%;
   }
 }
 
@@ -99,7 +91,113 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    color-scheme: dark;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-feature-settings: "ss01";
+  }
+}
+
+/* ── KRUXT Utilities ── */
+@layer utilities {
+  .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .gradient-brand {
+    background: var(--gradient-brand);
+  }
+
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .border-kruxt {
+    border-color: hsl(var(--kruxt-border));
+  }
+
+  .bg-void {
+    background: var(--gradient-void);
+  }
+
+  .bg-card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .kruxt-grain {
+    position: relative;
+  }
+  .kruxt-grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: 0;
+  }
+}
+
+/* ── Skeleton shimmer ── */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 25%,
+    hsl(var(--secondary)) 50%,
+    hsl(var(--muted)) 75%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.6s infinite linear;
+  border-radius: calc(var(--radius) - 2px);
+}
+
+/* ── Fade in ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* ── Gold pulse (for status badges) ── */
+@keyframes goldPulse {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(38 96% 54% / 0.4); }
+  50%       { box-shadow: 0 0 0 6px hsl(38 96% 54% / 0); }
+}
+
+.pulse-gold {
+  animation: goldPulse 2s ease-in-out infinite;
 }

@@ -286,7 +286,8 @@ function mapErrorToStep(code: string): OnboardingUiStep {
       "PROFILE_READ_FAILED",
       "PROFILE_UPSERT_FAILED",
       "PROFILE_USERNAME_COLLISION",
-      "PROFILE_NOT_FOUND"
+      "PROFILE_NOT_FOUND",
+      "AVATAR_UPLOAD_FAILED"
     ].includes(code)
   ) {
     return "profile";
@@ -333,6 +334,10 @@ function mapErrorMessage(code: string, fallback: string): string {
 
   if (code === "PROFILE_USERNAME_COLLISION") {
     return "That username is unavailable. Try another username.";
+  }
+
+  if (code === "AVATAR_UPLOAD_FAILED") {
+    return "Profile photo upload failed. Check storage bucket policies and retry.";
   }
 
   if (code === "BASELINE_CONSENT_REQUIRED") {
